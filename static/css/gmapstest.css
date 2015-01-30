@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+        background-color: #CCC;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
