@@ -1,57 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--Allows for mobile viewing of webpages-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StuBds</title> <!--Students using books to defeat stress-->
+        <!-- Linking the Bootstrap CSS to our HTML -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet"> 
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    </head>
 
-<head>
-    <link href="./static/bootstrap/bootstrap.css" rel="stylesheet">
+    <body>
 
-    <link href="./static/css/custom.css" rel="stylesheet">
-    <link href="./static/css/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="./static/css/bootstrap/bootstrap.css" rel="stylesheet/css">
-    <link href="/static/css/custom.css" rel="stylesheet/css">
-</head>
-<body background="./static/images/FullMaps.png">
-<div id="header">
-    <img src="./static/images/NavBar3.png" height="70">
-    <buttons>
-        <form action="./static/Prototype 2/sampleMail.html">
-            <input type="image" src="./static/images/Mail.png" height="70">
-        </form>
-    </buttons>
-    <buttons>
-        <form action="./static/Prototype 2/sampleSettings.html">
-            <input type="image" src="./static/images/Settings.png" height="70">
-        </form>
-    </buttons>
-</div>
-<form action="./static/Prototype 2/P2 Home.html">
-    <input type="submit" value="login">
-</form>
+        <div class ="brand"> Study Link aka SLINK! </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Study Link</a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="profile copy.html">Profile</a>
+                    </li>
+                    <li><a href="loginRegister.html">Login/Register</a>
+                    </li>
+                    <li><a href="filter.html">Contacts</a>
+                    </li>
+                    <li><a href="sampleMail.html">Messages</a>
+                    </li>
+                </ul>
+            
+            </div>
+        </nav>
 
-
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    
+                    <!--h2 class="intro-text text-center">Study link
+                    </h2-->
+                    
 <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=32.8801%2C-117.2340&key=AIzaSyAcCmeT2ra94kRlbh-LCYbiQ3RhaLqmOvU"></iframe>
-<form action="./static/Prototype 2/Profile.html">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Clickable icons]
+                <a class="btn btn-default" href="index.html" role="button">Filter by tag or course</a>
+                <div class="filter and update">
+                    <form role="form">
+                            <div class="clearfix"></div>
+                            <div class="form-group col-lg-12">
+                                <label>Status update</label>
+                                <textarea class="form-control" rows="2">What are you studying?</textarea>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                
+            
+            </div>
+                </div>
+            </div>
+        </div>
 
-<input type="image" src="./static/images/pin.png" width="35" height="45">
-</form>
-
-
-</body>
-    <footer class="footer nav">
-      <div class="container">
-        <p class="text-muted"> 
-        <buttons>       
-         <form action="./static/Prototype 2/sampleFilter.html">
-            <input type="submit" value="Filter" height="70">
-        </buttons>
-        <buttons>
-            <form action="./static/Prototype 2/sampleStatus.html">
-            <input type="submit" value="Status" height="70">
-            </form>
-        </buttons>
-    </p>
-      </div>
-    </footer>
-
+       <script src="js/jquery-1.10.2.js"></script>
+       <script src="js/bootstrap.js"></script>
+    </body>
 </html>
