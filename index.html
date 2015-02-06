@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <!--Allows for mobile viewing of webpages-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StuBds</title> <!--Students using books to defeat stress-->
+        <title>Flock</title> <!--Students using books to defeat stress-->
         <!-- Linking the Bootstrap CSS to our HTML -->
         <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">
+        <link href="css/hci-friends.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet"> 
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -14,7 +16,7 @@
 
     <body>
 
-        <div class ="brand"> Study Link aka SLINK! </div>
+        <div class ="brand"> Flock! </div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -24,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Study Link</a>
+                    <a class="navbar-brand" href="index.html">Flock</a>
                 </div>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -48,17 +50,20 @@
                     
                     <!--h2 class="intro-text text-center">Study link
                     </h2-->
-                    
-<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=32.8801%2C-117.2340&key=AIzaSyAcCmeT2ra94kRlbh-LCYbiQ3RhaLqmOvU"></iframe>
-                <a class="btn btn-default" href="index.html" role="button">Filter by tag or course</a>
-                <div class="filter and update">
-                    <form role="form">
+     <div class="wrapper">               
+<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=32.8801%2C-117.2340&key=AIzaSyAcCmeT2ra94kRlbh-LCYbiQ3RhaLqmOvU"></iframe><br>
+
+                <a class="btn btn-default" href="index.html" role="button">Filter by tag or course</a> </div><br><br>
+                <label><div class="status">Update your status</div></label><br><br>
+                <div class="status-form">
+                    <form role="form" >
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
-                                <label>Status update</label>
+                                <!--label>Status update</label-->
                                 <textarea class="form-control" rows="2">What are you studying?</textarea>
                             </div>
-                            <div class="form-group col-lg-12">
+
+                            <div class="wrapper">
                                 <input type="hidden" name="save" value="contact">
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </div>
@@ -75,6 +80,7 @@
 
        <script src="js/jquery-1.10.2.js"></script>
        <script src="js/bootstrap.js"></script>
+       <script src="js/hci-friends.js"></script>
     </body>
 </html>
 
