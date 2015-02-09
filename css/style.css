@@ -1,7 +1,7 @@
 
 
 body {
-  background: url(../img/KOA.jpg) no-repeat center center fixed; 
+  background: url(../img/KOA.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -61,10 +61,11 @@ hr {
 
 
 .navbar-brand {
-  
+
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 900;
+  font-weight: 400;
+  color: blue;
 }
 
 .navbar-nav {
