@@ -31,7 +31,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-weight: 400;
+  font-weight: 400; 
 }
 
 p {
@@ -51,9 +51,6 @@ hr {
       top: 40px;
       right: 50px;
       width: 100%;
-	background-color: #ffb515;
-
-
 }
 
 #checkboxes{

@@ -16,7 +16,7 @@ var cogsList = [
   {"latlng":[32.8811,-117.2371],name:"Erica","tag":"Assignment#6"},
   {"latlng":[32.8812,-117.2374],name:"Alex","tag":"Assignment#6"},
   {"latlng":[32.8883,-117.2372],name:"Elena","tag":"Need Halp!"},
-  {"latlng":[32.8815,-117.2370],name:"Annie"}
+  {"latlng":[32.8815,-117.2370],name:"Annie","tag":"Don't Help Elena"}
   ];
 
 var infoWnd, mapCanvas;
@@ -31,6 +31,7 @@ function initialize() {
       mapOptions);
 	filterCSE();  
 }
+
 
 
 function filterCSE(){
@@ -150,9 +151,7 @@ function createMarkerButton(marker){
   ul.appendChild(li);
 
   markers.push(marker);
-
-
-  //Trigger a click event to marker when the button is clicked.
+      //Trigger a click event to marker when the button is clicked.
   google.maps.event.addDomListener(li, "click", function(){
     google.maps.event.trigger(marker, "click");
   });
