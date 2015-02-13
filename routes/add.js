@@ -9,8 +9,8 @@ exports.regProfile = function(req, res) { 
     var  newProfile = {
     				"name": newName,
     				"email": newEmail,
-    				"password": newPassword
-                    "picture": "http://lorempixel.com/500/500/people"    
+    				"password": newPassword,
+                    		"picture": "http://lorempixel.com/500/500/people"    
     			};
 	data["profiles"].push(newProfile);
 	res.render('add');
