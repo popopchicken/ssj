@@ -25,6 +25,9 @@ body {
   font-family:  'Raleway', sans-serif;
 }
 
+
+
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -41,6 +44,49 @@ hr {
   border-color: #999999;
   max-width: 400px;
 }
+
+#sidebar {
+	margin-left:auto;
+	margin-right:auto;
+      top: 40px;
+      right: 50px;
+      width: 100%;
+	background-color: #ffb515;
+
+
+}
+
+#checkboxes{
+	clear:both;
+	margin-left:50px;
+	positon:absolute;
+	font:1.2em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+}
+.status{
+	margin-left:auto;
+	margin-right:auto;
+	positon:bottom;
+}
+
+.btn btn-default{
+clear:both;
+}
+#map-canvas {
+	float:left;
+	position:left;
+	margin-right:auto;
+  	height: 400px;
+	width: 100%;
+}
+#marker_list{
+	float:right;	
+   	list-style: none;
+	color:#08233e;
+	font:0.9em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+	border-bottom:1px solid #9f9f9f;
+	padding:0 200px;
+}
+
 
 .box {
   background: #fff;
@@ -107,6 +153,8 @@ hr {
     padding-left: 20px;
     font-family:  'Exo', bold;
 }
+
+
 
 @media screen and (min-width: 768px) {
 
