@@ -8,7 +8,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script type='text/javascript'src="js/script.js"></script>
-
+    <script src="mapiconmaker.js" type="text/javascript"></script>
         <!-- Linking the Bootstrap CSS to our HTML -->
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap-theme.css" rel="stylesheet">
@@ -48,7 +48,7 @@
         </nav>
 
 
- 
+
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
@@ -60,13 +60,13 @@
      <div class="wrapper">
      <div class="arrangement">
   <div id="map-canvas"></div>
-    <div id="marker_list">List of Students</div> 
+    <div id="marker_list">List of Students</div>
 	</div>
 <br>
 <br>
 <br>
 <br>
-	<div class="checkBox"> 
+	<div class="checkBox">
 	<h4 position="right"> Filter by Class <h4>
                 <label><input type="radio" onchange="filterCSE()" name="checkbox" value="value">CSE170</label>
                 <label><input type="radio" onchange="filterECE()"name="checkbox" value="value">ECE100</label>
@@ -86,7 +86,7 @@
 
                             <div class="wrapper">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" onclick="markSelf()"class="btn btn-default">Submit</button>
                             </div>
 
                     </form>

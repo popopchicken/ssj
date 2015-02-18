@@ -18,18 +18,77 @@ var cogsList = [
   {"latlng":[32.8883,-117.2372],name:"Elena","tag":"Need Halp!"},
   {"latlng":[32.8815,-117.2370],name:"Annie","tag":"Don't Help Elena"}
   ];
-
+var geisel = new google.maps.LatLng(32.8812,-117.2377);
+var chicago = new google.maps.LatLng(41.85, -87.65);
 var infoWnd, mapCanvas;
 var markers = [];
+var selfMarkers =[];
+
+/** @constructor */
+function CenterControl(controlDiv, map) {
+
+  // Set CSS for the control border
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginBottom = '22px';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Click to recenter the map';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior
+  var controlText = document.createElement('div');
+  controlText.style.fontSize = '16px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Center Map';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to
+  // Chicago
+  google.maps.event.addDomListener(controlUI, 'click', function() {
+    map.setCenter(chicago)
+  });
+
+}
+
 function initialize() {
   //Creates a map object.
   var mapOptions = {
-    zoom: 4,
-    center: new google.maps.LatLng(-32.8812, 117.2375)
+       panControl: true,
+       mapTypeId: google.maps.MapTypeId.SATELLITE,
+       zoom: 4,
+       center: geisel
   };
   mapCanvas  = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-	filterCSE();  
+	filterCSE();
+
+    var marker = new google.maps.Marker({
+    map:mapCanvas,
+    draggable:true,
+    animation: google.maps.Animation.DROP,
+    position: geisel,
+    title:"Jesse is Here!"
+  });
+
+
+  google.maps.event.addListener(marker, 'click', toggleBounce);
+  // Div for StreetMap View
+  //
+  /*
+ var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl(centerControlDiv, map);
+
+  centerControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+
+*/
+
 }
 
 
@@ -42,7 +101,7 @@ $("#marker_list").empty();
 
   //Creates a infowindow object.
   infoWnd = new google.maps.InfoWindow();
-  
+
   //Mapping markers on the map
   var bounds = new google.maps.LatLngBounds();
   var cse, i, latlng;
@@ -55,9 +114,9 @@ $("#marker_list").empty();
 
     var tag = ((cse.name).concat(": #")).concat(cse.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag 
+      mapCanvas, latlng, tag
     );
-    
+
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
@@ -67,13 +126,12 @@ $("#marker_list").empty();
 
 
 function filterECE(){
-
 // Pruning
 deleteMarkers();
 $("#marker_list").empty();
   //Creates a infowindow object.
   infoWnd = new google.maps.InfoWindow();
-  
+
   //Mapping markers on the map
   var bounds = new google.maps.LatLngBounds();
   var ece, i, latlng;
@@ -84,9 +142,9 @@ $("#marker_list").empty();
     bounds.extend(latlng);
     var tag = ((ece.name).concat(": #")).concat(ece.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag 
+      mapCanvas, latlng, tag
     );
-    
+    marker.set("color","#000000");
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
@@ -101,7 +159,7 @@ deleteMarkers();
 $("#marker_list").empty();
   //Creates a infowindow object.
   infoWnd = new google.maps.InfoWindow();
-  
+
   //Mapping markers on the map
   var bounds = new google.maps.LatLngBounds();
   var cogs, i, latlng;
@@ -114,9 +172,9 @@ $("#marker_list").empty();
 
     var tag = ((cogs.name).concat(": #")).concat(cogs.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag 
+      mapCanvas, latlng, tag
     );
-    
+
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
@@ -130,9 +188,9 @@ function createMarker(map, latlng, title){
   var marker = new google.maps.Marker({
     position : latlng,
     map : map,
-    title : title 
+    title : title
   });
-  
+
   //The infoWindow is opened when the sidebar button is clicked
   google.maps.event.addListener(marker, "click", function(){
     infoWnd.setContent("<strong>" + title + "</title>");
@@ -156,7 +214,17 @@ function createMarkerButton(marker){
     google.maps.event.trigger(marker, "click");
   });
 }
+// Define a property to hold the center state
+CenterControl.prototype.center_ = null;
 
+// Define setters and getters for this property
+CenterControl.prototype.getCenter = function() {
+  return this.center_;
+}
+
+CenterControl.prototype.setCenter = function(center) {
+  this.center_ = center;
+}
 
 // Sets the map on all markers in the array.
 function setAllMap(map) {
@@ -174,5 +242,43 @@ function deleteMarkers() {
   markers = [];
 }
 
+
+
+function markSelf(){
+
+var box = prompt("Please enter your name", "Harry Potter");
+
+    if (box != null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+
+
+  var marker = new google.maps.Marker({
+    position : chicago,
+    map : map,
+    title : "It's a me, Mario!"
+});
+}
+
+function toggleBounce() {
+
+  if (marker.getAnimation() != null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+
+/*
+function textBox(){
+var box = prompt("Please enter your name", "Harry Potter");
+
+    if (box != null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}*/
 google.maps.event.addDomListener(window, "load", initialize);
 
