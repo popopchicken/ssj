@@ -92,10 +92,7 @@ hr {
     height: 250px;
 }
 .container{
-  max-height: 60px;
-  max-width: 300px;
-    overflow-y: visible !important;
-    overflow: hidden;
+
 }
 
 #marker_list{
