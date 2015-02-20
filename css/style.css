@@ -123,6 +123,29 @@ hr {
     margin:0;
     padding:0;
 }
+#userTag{
+    max-width: 200px;
+    font:1.3em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+
+
+}
+
+.status{
+position:right;
+float:right;
+
+}
+.status-form{
+    position:bottom;
+}
+.circ {
+	width: 75;
+	height: 75;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
 
 .myButton {
     -moz-box-shadow: 0px 1px 0px 0px #fff6af;
