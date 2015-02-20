@@ -1,22 +1,22 @@
 var cseList = [
-  {"latlng":[32.8810,-117.2376],name:"Jesse","tag":"Quiz!"},
-  {"latlng":[32.8812,-117.2374],name:"Sachi","tag":"Test Review!"},
-  {"latlng":[32.8814,-117.2375],name:"Shaina","tag":"Assignment#3!"},
-  {"latlng":[32.8812,-117.2373],name:"Vineet","tag":"Party!!"}
+  {"latlng":[32.8810,-117.2376],name:"Jesse","tag":"Quiz!","status":"CSE170", "pic":"http://lorempixel.com/50/50/food"},
+  {"latlng":[32.8812,-117.2374],name:"Sachi","tag":"Test Review!","status":"CSE170", "pic":"http://lorempixel.com/50/50/fashion"},
+  {"latlng":[32.8814,-117.2375],name:"Shaina","tag":"Assignment#3!","status":"CSE170", "pic":"http://lorempixel.com/400/400/people"},
+  {"latlng":[32.8812,-117.2373],name:"Vineet","tag":"Party!!","status":"CSE170", "pic":"http://lorempixel.com/50/50/animals" }
   ];
 
 var eceList = [
-  {"latlng":[32.8810,-117.2375],name:"Ella","tag":"Assignment#2!"},
-  {"latlng":[32.8862,-117.2375],name:"Phuong","tag":"Project Stage3!"},
-  {"latlng":[32.8814,-117.2475],name:"Raul","tag":"Lost and Sad!"},
-  {"latlng":[32.8812,-117.2375],name:"Nick","tag":"Quiz Study"}
+  {"latlng":[32.8810,-117.2375],name:"Ella","tag":"Assignment#2!", "status":"ECE100", "pic":"http://lorempixel.com/50/50/animals"},
+  {"latlng":[32.8862,-117.2375],name:"Phuong","tag":"Project Stage3!", "status":"ECE100", "pic":"http://lorempixel.com/50/50/people"},
+  {"latlng":[32.8814,-117.2475],name:"Raul","tag":"Lost and Sad!", "status":"ECE100", "pic":"http://lorempixel.com/50/50/fashion"},
+  {"latlng":[32.8812,-117.2375],name:"Nick","tag":"Quiz Study", "status":"ECE100", "pic":"http://lorempixel.com/50/50/food"}
   ];
 var cogsList = [
-  {"latlng":[32.8811,-117.2400],name:"ScottyK","tag":"Assignment#6"},
-  {"latlng":[32.8811,-117.2371],name:"Erica","tag":"Assignment#6"},
-  {"latlng":[32.8812,-117.2374],name:"Alex","tag":"Assignment#6"},
-  {"latlng":[32.8883,-117.2372],name:"Elena","tag":"Need Halp!"},
-  {"latlng":[32.8815,-117.2370],name:"Annie","tag":"Don't Help Elena"}
+  {"latlng":[32.8811,-117.2400],name:"ScottyK","tag":"Assignment#6", "status":"COGS11B", "pic":"http://lorempixel.com/50/50/people"},
+  {"latlng":[32.8811,-117.2371],name:"Erica","tag":"Assignment#6", "status":"COGS11B", "pic":"http://lorempixel.com/50/50/animals"},
+  {"latlng":[32.8812,-117.2374],name:"Alex","tag":"Assignment#6", "status":"COGS11B", "pic":"http://lorempixel.com/50/50/fashion"},
+  {"latlng":[32.8883,-117.2372],name:"Elena","tag":"Need Halp!", "status":"COGS11B", "pic":"http://lorempixel.com/50/50/food"},
+  {"latlng":[32.8815,-117.2370],name:"Annie","tag":"Don't Help Elena", "status":"COGS11B", "pic":"http://lorempixel.com/50/50/cats"}
   ];
 var geisel = new google.maps.LatLng(32.8812,-117.2377);
 var chicago = new google.maps.LatLng(41.85, -87.65);
@@ -111,8 +111,9 @@ $("#marker_list").empty();
     latlng = new google.maps.LatLng(cse.latlng[0], cse.latlng[1]);
     bounds.extend(latlng);
 
-
-    var tag = ((cse.name).concat(": #")).concat(cse.tag);
+    var img = '<img class="img-responsive circular" src='
+    //var img = '<div class="circular"> </div>'
+    var tag = (cse.name).concat(img + (cse.pic) +'> <br/>' + cse.status + '<br/>');
     var marker = createMarker(
       mapCanvas, latlng, tag
     );
@@ -140,7 +141,10 @@ $("#marker_list").empty();
     ece = eceList[i];
     latlng = new google.maps.LatLng(ece.latlng[0], ece.latlng[1]);
     bounds.extend(latlng);
-    var tag = ((ece.name).concat(": #")).concat(ece.tag);
+
+    //var tag = ((ece.name).concat(": #")).concat(ece.tag);
+    var img = '<img class="img-responsive circular" src='
+    var tag = (ece.name).concat(img + (ece.pic) +'> <br/>' + ece.status + '<br/>');
     var marker = createMarker(
       mapCanvas, latlng, tag
     );
@@ -170,7 +174,9 @@ $("#marker_list").empty();
     bounds.extend(latlng);
 
 
-    var tag = ((cogs.name).concat(": #")).concat(cogs.tag);
+    //var tag = ((cogs.name).concat(": #")).concat(cogs.tag);
+    var img = '<img class="img-responsive circular" src='
+    var tag = (cogs.name).concat(img + (cogs.pic) +'> <br/>' + cogs.status + '<br/>');
     var marker = createMarker(
       mapCanvas, latlng, tag
     );
@@ -270,7 +276,36 @@ function toggleBounce() {
   }
 }
 
+/*function statusCSE(){
 
+// Pruning
+deleteMarkers();
+$("#marker_list").empty();
+
+  //Creates a infowindow object.
+  infoWnd = new google.maps.InfoWindow();
+
+  //Mapping markers on the map
+  var bounds = new google.maps.LatLngBounds();
+  var cse, i, latlng;
+  for (i in cseList) {
+    //Creates a marker
+    cse = cseList[i];
+    latlng = new google.maps.LatLng(cse.latlng[0], cse.latlng[1]);
+    bounds.extend(latlng);
+
+
+    var tag = ((cse.name).concat(": #")).concat(cse.tag);
+    var marker = createMarker(
+      mapCanvas, latlng, tag
+    );
+
+    //Creates a sidebar button for the marker
+    createMarkerButton(marker);
+  }
+  //Fits the map bounds
+  mapCanvas.fitBounds(bounds);
+}*/
 /*
 function textBox(){
 var box = prompt("Please enter your name", "Harry Potter");

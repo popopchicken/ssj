@@ -22,3 +22,11 @@ h1, h2, h3, h4, h5 {
 .wrapper {
 	text-align: center;
 }
+
+.circular {
+	width: 50px;
+	height: 50px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
