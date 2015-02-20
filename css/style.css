@@ -55,6 +55,7 @@ hr {
     max-width: 400px;
     margin:0;
     padding-bottom:1px;
+    align:center;
 }
 
 
@@ -227,8 +228,8 @@ float:right;
 
 
 .navbar-brand {
-overflow-y: hidden !important;
-    overflow: hidden;
+/*overflow-y: hidden !important;
+    overflow: hidden;*/
 
     font-family:  'Exo', bold;
     text-transform: uppercase;
