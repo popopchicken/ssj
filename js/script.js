@@ -2,7 +2,6 @@ var cseList = [
   {"latlng":[32.8810,-117.2376],name:"Jesse","tag":"Quiz!"},
   {"latlng":[32.8812,-117.2374],name:"Sachi","tag":"Test Review!"},
   {"latlng":[32.8814,-117.2375],name:"Shaina","tag":"Assignment#3!"},
-  {"latlng":[32.8812,-117.2373],name:"Vineet","tag":"Party!!"}
   ];
 
 var eceList = [
@@ -20,7 +19,7 @@ var cogsList = [
   ];
 var geisel = new google.maps.LatLng(32.8812,-117.2377);
 var chicago = new google.maps.LatLng(41.85, -87.65);
-var infoWnd, mapCanvas;
+var infoWnd, map;
 var markers = [];
 var selfMarkers =[];
 
@@ -56,28 +55,81 @@ function CenterControl(controlDiv, map) {
 
 }
 
+
+function makeVisible(){
+//$(this).find(".hidden").css("visibility","visible");
+    document.getElementById("hiddenObj").style.display = "block";
+}
+function makeInvisible(){}
+
+/* INITIALIZE FUNCTION
+ *
+ * Initializes map and sets markers, as well as animations.
+ *
+ */
+
 function initialize() {
   //Creates a map object.
   var mapOptions = {
-       panControl: true,
+       panControl: false,
        mapTypeId: google.maps.MapTypeId.SATELLITE,
        zoom: 4,
        center: geisel
   };
-  mapCanvas  = new google.maps.Map(document.getElementById('map-canvas'),
+
+  map  = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 	filterCSE();
-
+    var myIcon = new google.maps.MarkerImage("img/customBlue.png", null, null, null, new google.maps.Size(30,40));
+    var image = 'img/redpin.png';
     var marker = new google.maps.Marker({
-    map:mapCanvas,
+    map:map,
     draggable:true,
     animation: google.maps.Animation.DROP,
     position: geisel,
-    title:"Jesse is Here!"
+    title:"Vineet:#PartywithTa's",
+    icon:myIcon
   });
 
 
-  google.maps.event.addListener(marker, 'click', toggleBounce);
+ var contentString = "Set Location by dragging!"
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+
+
+    infowindow.open(map,marker);
+ setTimeout(function(){
+    infowindow.close(map,marker);
+   // document.getElementById('wrapper').style.display = "block";
+},4000);
+
+
+
+    // Calculates and sets center when window size changes
+var center=map.getCenter();
+function calculateCenter() {
+  center = map.getCenter();
+}
+google.maps.event.addDomListener(map, 'idle', function() {
+  calculateCenter();
+});
+
+
+google.maps.event.addDomListener(window, 'resize', function() {
+  map.setCenter(center);
+});
+  //google.maps.event.addListener(marker, 'click', toggleBounce);
+  marker.setAnimation(google.maps.Animation.BOUNCE);
+  setTimeout(function() {
+        marker.setAnimation(null)
+    }, 3000);
+
+
+
+
   // Div for StreetMap View
   //
   /*
@@ -114,14 +166,14 @@ $("#marker_list").empty();
 
     var tag = ((cse.name).concat(": #")).concat(cse.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag
+      map, latlng, tag
     );
 
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
   //Fits the map bounds
-  mapCanvas.fitBounds(bounds);
+  map.fitBounds(bounds);
 }
 
 
@@ -142,14 +194,14 @@ $("#marker_list").empty();
     bounds.extend(latlng);
     var tag = ((ece.name).concat(": #")).concat(ece.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag
+      map, latlng, tag
     );
     marker.set("color","#000000");
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
   //Fits the map bounds
-  mapCanvas.fitBounds(bounds);
+  map.fitBounds(bounds);
 
 }
 
@@ -172,14 +224,14 @@ $("#marker_list").empty();
 
     var tag = ((cogs.name).concat(": #")).concat(cogs.tag);
     var marker = createMarker(
-      mapCanvas, latlng, tag
+      map, latlng, tag
     );
 
     //Creates a sidebar button for the marker
     createMarkerButton(marker);
   }
   //Fits the map bounds
-  mapCanvas.fitBounds(bounds);
+  map.fitBounds(bounds);
 }
 
 
@@ -245,7 +297,12 @@ function deleteMarkers() {
 
 
 function markSelf(){
-
+window.alert("Message Sent!");
+    setTimeout(function(){
+window.alert("You received a message from: Scott.\nCheck your Messages!");
+   // document.getElementById('wrapper').style.display = "block";
+},5000);
+/*
 var box = prompt("Please enter your name", "Harry Potter");
 
     if (box != null) {
@@ -259,7 +316,10 @@ var box = prompt("Please enter your name", "Harry Potter");
     map : map,
     title : "It's a me, Mario!"
 });
+    */
 }
+
+
 
 function toggleBounce() {
 

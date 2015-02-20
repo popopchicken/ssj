@@ -56,37 +56,34 @@
                     <!--h2 class="intro-text text-center">Study link
                     </h2-->
 
-
-     <div class="wrapper">
+  <div id="map-canvas" style="margin-bottom:10px"></div>
+        <div class="wrapper">
      <div class="arrangement">
-  <div id="map-canvas"></div>
-    <div id="marker_list">List of Students</div>
+
 	</div>
-<br>
-<br>
-<br>
-<br>
 	<div class="checkBox">
-	<h4 position="right"> Filter by Class <h4>
+	<h6 position="right"> Filter by Class <h6>
                 <label><input type="radio" onchange="filterCSE()" name="checkbox" value="value">CSE170</label>
                 <label><input type="radio" onchange="filterECE()"name="checkbox" value="value">ECE100</label>
                 <label><input type="radio" onchange="filterCOGS()"name="checkbox" value="value">COGS11B</label>
 	</div>
-<br><br>
+<HR WIDTH="100%" COLOR="#6699FF" SIZE="15">
+<div class="container">
+    <div id="marker_list">List of Students</div>
+ </div>
+<HR WIDTH="100%" COLOR="#6699FF" SIZE="15">
 
-
-                <label><div class="status">Alert the flock - What are you studying?</div></label>
-                <div class="status-form">
-                    <form role="form" >
+                <label><div class="status">Message User: </div></label>
+                <div id="sendForm" class="status-form">
+                    <form  role="form" >
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
                                 <!--label>Status update</label-->
-                                <textarea class="form-control" rows="2">#Cogs120 #ScottKlemmers</textarea>
+                                <textarea class="form-control" rows="2"></textarea>
                             </div>
 
-                            <div class="wrapper">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="button" onclick="markSelf()"class="btn btn-default">Submit</button>
+                                <button class="myButton" id ="send"type="button" onclick="markSelf()"class="btn btn-default">Send</button>
                             </div>
 
                     </form>
