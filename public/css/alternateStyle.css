@@ -58,6 +58,19 @@ hr {
 }
 
 
+
+.panControl, .sliderWrapper, .slider, .zoomin, .zoomout, .maptoggle, .maptoggle span {
+        background-image:url("http://developer.mapquest.com/content/documentation/common/images/sprite_map_controls_blue.png") !important;
+      }
+
+      .min, .min:hover, .max, .max:hover {
+        background-image:url("http://developer.mapquest.com/content/documentation/common/images/min_max_blue.png") !important;
+      }
+
+
+
+
+
 #sidebar {
     margin-left:auto;
     margin-right:auto;

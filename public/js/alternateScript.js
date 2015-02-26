@@ -39,6 +39,7 @@ function CenterControl(controlDiv, map) {
   controlDiv.appendChild(controlUI);
 
   // Set CSS for the control interior
+  /*
   var controlText = document.createElement('div');
   controlText.style.fontSize = '16px';
   controlText.style.lineHeight = '38px';
@@ -46,13 +47,34 @@ function CenterControl(controlDiv, map) {
   controlText.style.paddingRight = '5px';
   controlText.innerHTML = 'Message';
   controlUI.appendChild(controlText);
+*/
+  // Set CSS for the zoomIn
+  var zoomInButton = document.createElement('div');
+  zoomInButton.style.width = '45px';
+  zoomInButton.style.height = '45px';
+  /* Change this to be the .png image you want to use */
+  zoomInButton.style.backgroundImage = 'url("img/blueicon2.png")';
+  zoomInButton.style.backgroundColor = "#00D6C7";
+  controlUI.appendChild(zoomInButton);
 
+  // Set CSS for the zoomOut
+  var zoomOutButton = document.createElement('div');
+  zoomOutButton.style.width = '45px';
+  zoomOutButton.style.height = '45px';
+  /* Change this to be the .png image you want to use */
+  zoomOutButton.style.backgroundImage = 'url("img/out4.png")';
+  controlUI.appendChild(zoomOutButton);
   // Setup the click event listeners: simply set the map to
-  // Chicago
-  google.maps.event.addDomListener(controlUI, 'click', function() {
-   markSelf()
+
+   // Setup the click event listener - zoomIn
+  google.maps.event.addDomListener(zoomInButton, 'click', function() {
+    map.setZoom(map.getZoom() + 1);
   });
 
+  // Setup the click event listener - zoomOut
+  google.maps.event.addDomListener(zoomOutButton, 'click', function() {
+    map.setZoom(map.getZoom() - 1);
+  });
 }
 
 
@@ -71,7 +93,9 @@ function makeInvisible(){}
 function initialize() {
   //Creates a map object.
   var mapOptions = {
+       zoomControl: false,
        panControl: false,
+       rotateControl: false,
        mapTypeId: google.maps.MapTypeId.SATELLITE,
        streetViewControl: false,
        zoom: 4,
@@ -134,11 +158,12 @@ google.maps.event.addDomListener(window, 'resize', function() {
   // Create the DIV to hold the control and
   // call the CenterControl() constructor passing
   // in this DIV.
+  //
   var centerControlDiv = document.createElement('div');
   var centerControl = new CenterControl(centerControlDiv, map);
 
   centerControlDiv.index = 1;
-  map.controls[google.maps.ControlPosition.LEFT_TOP].push(centerControlDiv);
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
 }
 
 
