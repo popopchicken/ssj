@@ -1,0 +1,28 @@
+{
+	"Friends": [
+		{
+			"name": "Vineet Pandey",
+			"email": "vipandey@ucsd.edu",
+			"password": "1234",	
+			"picture": "http://lorempixel.com/500/500/people"		
+		},
+		{
+			"name": "Shaina Wan",
+			"email": "s1wan@ucsd.edu",
+			"password": "1234",	
+			"picture": "http://lorempixel.com/500/500/people"	
+		},
+		{
+			"name": "Sachi Pitkin",
+			"email": "spitkin@ucsd.edu",
+			"password": "1234",		
+			"picture": "http://lorempixel.com/500/500/people"			
+		},
+		{
+			"name": "Jesse Ren",
+			"email": "jeren@ucsd.edu",
+			"password": "1234",		
+			"picture": "http://lorempixel.com/500/500/people"			
+		}
+	]
+}
