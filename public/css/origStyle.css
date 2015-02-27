@@ -25,14 +25,12 @@
 
 
 body {
-    /*background: url(../img/orange.g) no-repeat center center fixed;*/
-    /*/background: url(../img/orange.png);*/
-    /*background:#F2820A;
+    background: url(../img/bluebg.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family:  'Raleway', sans-serif;*/
+    font-family:  'Raleway', sans-serif;
 }
 
 
@@ -53,16 +51,12 @@ p {
 }
 
 hr {
-    border-color: #00FFFF;
+    border-color: #CACACA;
     max-width: 400px;
     margin:0;
-    padding-bottom:5px;
+    padding-bottom:1px;
+    align:center;
 }
-
-
-
-
-
 
 
 #sidebar {
@@ -98,10 +92,11 @@ hr {
     height: 250px;
 }
 .container{
-  max-height: 60px;
+      max-height: 60px;
   max-width: 300px;
-    overflow-y: visible !important;
+ overflow-y: visible !important;
     overflow: hidden;
+
 }
 
 #marker_list{
@@ -112,10 +107,10 @@ hr {
     overflow-x:hidden;
     overflow-y: scroll;
     float:right;
+    list-style: none;
     color:#08233e;
     font:0.9em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
     border-bottom:1px solid #9f9f9f;
-    width:100%;
 
 }
 #marker_list li{
@@ -130,6 +125,29 @@ hr {
     margin:0;
     padding:0;
 }
+#userTag{
+    max-width: 200px;
+    font:1.3em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+
+
+}
+
+.status{
+position:right;
+float:right;
+
+}
+.status-form{
+    position:bottom;
+}
+.circ {
+	width: 75;
+	height: 75;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
 
 .myButton {
     -moz-box-shadow: 0px 1px 0px 0px #fff6af;
@@ -174,10 +192,11 @@ hr {
 
 
 
+
+
 .box {
-    /*background: #fff;*/
+    background: #fff;
     background: rgba(255,255,255,0.9);
-    background:#00D6C7;
     margin-bottom: 20px;
     padding: 30px 15px;
 }
@@ -210,8 +229,8 @@ hr {
 
 
 .navbar-brand {
-overflow-y: hidden !important;
-    overflow: hidden;
+/*overflow-y: hidden !important;
+    overflow: hidden;*/
 
     font-family:  'Exo', bold;
     text-transform: uppercase;
@@ -227,7 +246,6 @@ overflow-y: hidden !important;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 400;
-    background: #EBA860;
 }
 
 
@@ -324,11 +342,4 @@ overflow-y: hidden !important;
 
 
     <!-- Jesse says we should probably have different css files :( -->
-
-
-
-
-
-    <!-- Jesse says we should probably have different css files :( -->
-
 
