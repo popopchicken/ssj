@@ -288,6 +288,9 @@ function createMarkerButton(marker){
   google.maps.event.addDomListener(li, "click", function(){
     google.maps.event.trigger(marker, "click");
   });
+   google.maps.event.addDomListener(li, "click", function(){
+      this.select();
+     });
 }
 // Define a property to hold the center state
 CenterControl.prototype.center_ = null;
@@ -353,7 +356,17 @@ function toggleBounce() {
   }
 }
 
-
+function selectText(containerid) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+        }
+    }
 /*
 function textBox(){
 var box = prompt("Please enter your name", "Harry Potter");
@@ -363,6 +376,8 @@ var box = prompt("Please enter your name", "Harry Potter");
         "Hello " + person + "! How are you today?";
     }
 }*/
+
+
 google.maps.event.addDomListener(window, "load", initialize);
 
 

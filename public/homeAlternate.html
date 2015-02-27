@@ -12,11 +12,10 @@
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap-theme.css" rel="stylesheet">
         <link href="css/alternateStyle.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/radio.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
-
     <body>
 <!--CHANGE TO CSS FILE-->
         <div class ="brand"> FLOCK </div>
@@ -58,8 +57,8 @@
      <div class="arrangement">
 
 	</div>
-	<div class="checkBox">
-	<h6 position="right"> Filter by Class <h6>
+	<div class="css-checkbox">
+	<h6 position="right"> CLASS FILTER <h6>
                 <label><input type="radio" onchange="filterCSE()" name="checkbox" value="value">CSE170</label>
                 <label><input type="radio" onchange="filterECE()"name="checkbox" value="value">ECE100</label>
                 <label><input type="radio" onchange="filterCOGS()"name="checkbox" value="value">COGS11B</label>
@@ -70,18 +69,9 @@
  </div>
 <HR WIDTH="100%" COLOR="#6699FF" SIZE="15">
 
-                <label><div class="status">Message User: </div></label>
-                <div id="sendForm" class="status-form">
-                    <form  role="form" >
-                            <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                                <!--label>Status update</label-->
-                                <textarea class="form-control" rows="2"></textarea>
-                            </div>
 
                                 <input type="hidden" name="save" value="contact">
-                                <button class="myButton" id ="send"type="button" onclick="markSelf()"class="btn btn-default">Send</button>
-                            </div>
+                                <button class="btn btn-warning btn-lg btn-block" id ="send"type="button" onclick="markSelf()"class="btn btn-default">Message</button>
 
                     </form>
 
