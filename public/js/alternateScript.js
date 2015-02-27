@@ -60,6 +60,7 @@ function CenterControl(controlDiv, map) {
   // Set CSS for the zoomOut
   var zoomOutButton = document.createElement('div');
   zoomOutButton.style.width = '45px';
+  zoomOutButton.style.borderRight = '45px';
   zoomOutButton.style.height = '45px';
   /* Change this to be the .png image you want to use */
   zoomOutButton.style.backgroundImage = 'url("img/out4.png")';
