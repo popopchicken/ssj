@@ -1,0 +1,20 @@
+{
+	"button": [
+	{
+		"name": "Maps"
+	},
+	{
+		"name": "Profile"
+	},
+	{
+		"name": "Login or Register"
+	},
+	{
+		"name": "Friends"
+	},
+	{
+		"name": "Messages"
+	}
+
+	]
+}
