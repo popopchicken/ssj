@@ -103,7 +103,7 @@ hr {
 }
 .container{
   max-height: 60px;
-  max-width: 300px;
+  max-width: 400px;
     overflow-y: visible !important;
     overflow: hidden;
 }
@@ -182,7 +182,6 @@ hr {
     background: #fff;
     background: rgba(255,255,255,0.9);
     /*background:#00D6C7;*/
-    margin-bottom: 20px;
     padding: 30px 15px;
 }
 
