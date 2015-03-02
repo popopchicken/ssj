@@ -1,0 +1,345 @@
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+@font-face {
+    font-family: Exo;
+    src: url("../fonts/Exo-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Exo;
+    src: url("../fonts/Exo-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Exo-Thin;
+    src: url("../fonts/Exo-Thin.otf") format("opentype");
+}
+
+
+body {
+    background: url(../img/bluebg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family:  'Raleway', sans-serif;
+}
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin:0;
+    padding:0;
+}
+
+p {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: #000;
+}
+
+hr {
+    border-color: #CACACA;
+    max-width: 400px;
+    margin:0;
+    padding-bottom:1px;
+    align:center;
+}
+
+
+#sidebar {
+    margin-left:auto;
+    margin-right:auto;
+    top: 40px;
+    right: 50px;
+    width: 100%;
+}
+
+#checkboxes{
+    clear:both;
+    margin-left:50px;
+    positon:absolute;
+    font:0.9em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    margin:0;
+    padding:0;
+}
+.status{
+    margin-left:auto;
+    margin-right:auto;
+    positon:bottom;
+}
+
+.btn btn-default{
+    clear:both;
+}
+#map-canvas {
+    float:left;
+    position:left;
+    margin-right:auto;
+    width: 100%;
+    height: 250px;
+}
+.container{
+      max-height: 60px;
+  max-width: 300px;
+ overflow-y: visible !important;
+    overflow: hidden;
+
+}
+
+#marker_list{
+
+
+}
+#marker_list ul{
+    overflow-x:hidden;
+    overflow-y: scroll;
+    float:right;
+    list-style: none;
+    color:#08233e;
+    font:0.9em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    border-bottom:1px solid #9f9f9f;
+
+}
+#marker_list li{
+    padding-left:5px;
+    display: inline;
+}
+
+#send{
+
+}
+#sendForm{
+    margin:0;
+    padding:0;
+}
+#userTag{
+    max-width: 200px;
+    font:1.3em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+
+
+}
+
+.status{
+position:right;
+float:right;
+
+}
+.status-form{
+    position:bottom;
+}
+.circ {
+	width: 75;
+	height: 75;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+
+.myButton {
+    -moz-box-shadow: 0px 1px 0px 0px #fff6af;
+    -webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+    box-shadow: 0px 1px 0px 0px #fff6af;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+    background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+    background-color:#ffec64;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+    background-color:#ffab23;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+
+
+.box {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+    padding: 30px 15px;
+}
+
+.intro-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+.img-full {
+    min-width: 100%;
+}
+
+.img-border {
+    float: none;
+    margin: 0 auto 0;
+    border: #999999 solid 1px;
+}
+
+.img-left {
+    float: none;
+    margin: 0 auto 0;
+}
+
+.brand{
+    display: none;
+}
+
+
+.navbar-brand {
+/*overflow-y: hidden !important;
+    overflow: hidden;*/
+
+    font-family:  'Exo', bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 900;
+    font-size: 2.5em;
+    line-height: normal;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    letter-spacing: normal;
+}
+.status{
+    left:50%:
+    padding-left: 20px;
+    font-family:  'Exo', bold;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+    .img-left {
+        float: left;
+        margin-right: 25px;
+    }
+
+
+
+    .brand {
+        display: inherit;
+        font-family:  'Exo', bold;
+        letter-spacing: 20px;
+        font-weight: 900;
+        font-size: 5em;
+        line-height: normal;
+        text-align: center;
+        margin: 0;
+        padding: 30px 0 10px;
+        color: #000000;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        color:white;
+    }
+
+    .navbar {
+        border-radius: 1;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 0;
+    }
+
+    .navbar-default {
+        background: #fff;
+        background: rgba(255,255,255,0.9);
+        border: none;
+    }
+
+    .nav>li>a {
+        padding: 35px;
+    }
+
+    .navbar-nav>li>a {
+        line-height: normal;
+    }
+
+    .navbar-nav {
+        float: none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+        font-size: 1.25em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .box:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+    .wrapper {
+        text-align: center;
+    }
+
+    .button {
+        position: absolute:
+        top: 50%;
+    }
+
+
+
+
+    <!-- Jesse says we should probably have different css files :( -->
+
