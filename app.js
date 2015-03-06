@@ -8,12 +8,13 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-var index = require('./routes/home');
+var index = require('./routes/altHome');
 var origHome = require('./routes/origHome');
 var altHome = require('./routes/altHome');
 var contacts = require('./routes/contacts');
 var messages = require('./routes/messages');
 var profile = require('./routes/profile');
+var login = require('./routes/login');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,7 @@ app.get('/altHome', altHome.view);
 app.get('/contacts', contacts.view);
 app.get('/messages', messages.view);
 app.get('/profile', profile.view);
+app.get('/login', login.view);
 // Example route
 // app.get('/users', user.list);
 

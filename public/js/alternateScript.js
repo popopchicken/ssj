@@ -93,10 +93,10 @@ function makeInvisible(){}
 function initialize() {
   //Creates a map object.
   var mapOptions = {
-       zoomControl: false,
+       zoomControl: true,
        panControl: false,
        rotateControl: false,
-       mapTypeId: google.maps.MapTypeId.SATELLITE,
+       mapTypeId: google.maps.MapTypeId.DEFAULT,
        streetViewControl: false,
        zoom: 4,
        center: geisel
@@ -159,11 +159,13 @@ google.maps.event.addDomListener(window, 'resize', function() {
   // call the CenterControl() constructor passing
   // in this DIV.
   //
+  /*
   var centerControlDiv = document.createElement('div');
   var centerControl = new CenterControl(centerControlDiv, map);
 
   centerControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+  */
 }
 
 
