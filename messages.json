@@ -1,0 +1,28 @@
+[
+	{
+		"name": "Jesse",
+		"message": "What's up?",
+		"image": "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+	},
+	{
+		"name": "Sharon",
+		"message": "Let's study for the quiz together!  Where you at?",
+		"image": "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+	},
+	{
+		"name": "Eric",
+		"message": "The problem was really easy.  I'll send you some examples later.",
+		"image": "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+	},
+	{
+		"name": "Elly",
+		"message": "Nvm then.  When are you meeting up with Sharon?",
+		"image": "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+	},
+	{
+		"name": "George",
+		"message": "Sorry, I can't come.",
+		"image": "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+	}
+	
+]

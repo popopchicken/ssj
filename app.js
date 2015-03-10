@@ -7,6 +7,14 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+// Required for using MongoDB
+var mongoose = require('mongoose');
+
+var local_database_name = 'flockDB';
+var local_database_uri =  'mongodb://localhost/' + local_database_name
+var database_uri = process.env.MONGOLAB_URI || local_database_uri
+mongoose.connect(database_uri);
+
 
 var index = require('./routes/altHome');
 var origHome = require('./routes/origHome');
@@ -15,6 +23,7 @@ var contacts = require('./routes/contacts');
 var messages = require('./routes/messages');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
+var signUp = require('./routes/signUp');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +57,8 @@ app.get('/contacts', contacts.view);
 app.get('/messages', messages.view);
 app.get('/profile', profile.view);
 app.get('/login', login.view);
+app.get('/signUp', signUp.view);
+app.post('/altHome/new', altHome.addProject);
 // Example route
 // app.get('/users', user.list);
 

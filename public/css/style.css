@@ -57,7 +57,54 @@ hr {
     padding-bottom:1px;
     align:center;
 }
+.signUpTxt{
+    float:center;
+    margin-left = auto;
+    margin-right = auto;
+    font-weight:700;
+    line-height:35px;
+    text-align:center;
+    /*background:url(../images/button_form.gif) top repeat-x #308da2;*/
+    border-radius:20px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;behavior:url(js/PIE.htc);
+    position:relative;
+    text-decoration:none
 
+
+}
+#logInButton{
+   margin: 0 auto; /* centers, provided there's a width set */
+    display: block;
+    font-size:20px;
+    font-weight:700;
+    color:#000000;
+    line-height:35px;
+    width:130px; /* width set */
+    text-align:center;
+    /*background:url(../images/button_form.gif) top repeat-x #308da2;*/
+    border-radius:20px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;behavior:url(js/PIE.htc);
+    position:relative;
+    text-decoration:none
+}
+
+#signUpButton{
+   margin: 0 auto; /* centers, provided there's a width set */
+    display: block;
+    font-size:20px;
+    font-weight:700;
+    color:#000000;
+    line-height:35px;
+    text-align:center;
+    /*background:url(../images/button_form.gif) top repeat-x #308da2;*/
+    border-radius:20px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;behavior:url(js/PIE.htc);
+    position:relative;
+    text-decoration:none
+}
 
 #sidebar {
     margin-left:auto;
@@ -92,8 +139,10 @@ hr {
     height: 250px;
 }
 .container{
-
-}
+  max-height: 70px;
+  max-width: 300px;
+    overflow-y: visible !important;
+    overflow: hidden;}
 
 #marker_list{
 
@@ -101,7 +150,6 @@ hr {
 }
 #marker_list ul{
     overflow-x:hidden;
-    overflow-y: scroll;
     float:right;
     list-style: none;
     color:#08233e;

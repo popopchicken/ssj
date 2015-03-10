@@ -91,6 +91,23 @@ function makeInvisible(){}
  */
 
 function initialize() {
+
+$('#newProjectSubmitButton').click(function(e) {
+    console.log('clicked');
+    var name = $('#new-project-form #name').val();
+    var message = $('#new-project-form #message').val();
+    var image = "http://developertodesigner.files.wordpress.com/2012/11/observing.jpg"
+    var json = {
+      'name': name,
+      'message':  message,
+      'image': image
+    };
+    $.post('/altHome/new', json, function() {
+      //window.location.href = '/'; // reload the page
+    });
+  });
+
+
   //Creates a map object.
   var mapOptions = {
        zoomControl: true,

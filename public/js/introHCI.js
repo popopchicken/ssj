@@ -13,6 +13,18 @@ function initializePage() {
 		//$('.jumbotron h1').text("Javascript is connected");
 		//$('#testjs').text("clicked!");
 		//$(".jumbotron p").toggleClass("active");
+//	});
+$('#newProjectSubmitButton').click(function(e) {
+		console.log('clicked');
+		var sender = $('#new-project-form #sender').val();
+		var message = $('#new-project-form #message').val();
+		var json = {
+			'sender': sender,
+			'message':  message
+		};
+		$.post('/messages', json, function() {
+			window.location.href = '/'; // reload the page
+		});
 	});
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
