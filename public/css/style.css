@@ -139,29 +139,53 @@ hr {
     height: 250px;
 }
 .container{
-  max-height: 70px;
+ /* max-height: 70px;
   max-width: 300px;
     overflow-y: visible !important;
-    overflow: hidden;}
+    overflow: hidden;
+    */
+}
 
 #marker_list{
-
-
 }
 #marker_list ul{
+    /*
     overflow-x:hidden;
     float:right;
     list-style: none;
     color:#08233e;
     font:0.9em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
     border-bottom:1px solid #9f9f9f;
+    */
+list-style-type: none;
+  margin: 0;
+  padding: 0;
 
 }
+#marker_list li a{
+    text-decoration: none;
+  color: #000;
+  display: block;
+  width: 200px;
+ 
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+#marker_list li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
 #marker_list li{
-    padding-left:5px;
-    display: inline;
+ font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+  }
+#marker_list li:last-child {
+  border: none;
 }
-
 #send{
 
 }
