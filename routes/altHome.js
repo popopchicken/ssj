@@ -35,7 +35,7 @@ exports.view = function(req, res){
 		.find()
 		.exec(renderProjects);
 
-	function renderProjects(err, projects) {
+	function renderProjects(err, projects, location) {
 		res.render('altHome', { 'projects': projects });
 	}
 

@@ -1,3 +1,6 @@
+var data = require('../locations.json');
+
+
 var cseList = [
   {"latlng":[32.8810,-117.2376],name:"Jesse","tag":"Quiz!"},
   {"latlng":[32.8812,-117.2374],name:"Sachi","tag":"Test Review!"},
@@ -199,6 +202,9 @@ $("#marker_list").empty();
   //Mapping markers on the map
   var bounds = new google.maps.LatLngBounds();
   var cse, i, latlng;
+
+
+
   for (i in cseList) {
     //Creates a marker
     cse = cseList[i];

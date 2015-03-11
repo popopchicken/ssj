@@ -23,12 +23,28 @@ mongoose.connect(database_uri);
 
 // Step 1: load the JSON data
 var projects_json = require('./messages.json');
+var locations_json = require('./locations.json');
+
+// Do something with this SOON
+
+
+
+
+
+
+/* this is the one causing a problem */
 
 // Step 2: Remove all existing documents
 models.Message
   .find()
   .remove()
   .exec(onceClear); // callback to continue at
+/*
+models.Location
+  .find()
+  .remove()
+  .exec(onceClear); // callback to continue at
+  */
 
 // Step 3: load the data from the JSON file
 function onceClear(err) {
@@ -54,4 +70,26 @@ function onceClear(err) {
       }
     });
   }
+/*
+  var to_save = locations_json.length;
+  for(var i=0; i<locations_json.length; i++) {
+    var json2 = locations_json[i];
+    var proj2 = new models.Location(json2);
+
+    proj2.save(function(err, proj2) {
+      if(err) console.log(err);
+
+      to_save--;
+      console.log(to_save + ' left to save');
+      if(to_save <= 0) {
+        console.log('DONE');
+        // The script won't terminate until the
+        // connection to the database is closed
+        mongoose.connection.close()
+      }
+    });
+
+}
+*/
+
 }
